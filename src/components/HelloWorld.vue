@@ -26,14 +26,24 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+
+    <h3>Modal Example</h3>
+    <button @click="show">Show Modal</button>
   </div>
 </template>
 
 <script>
+const MyModal = () => import("@/components/MyModal.vue");
+
 export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  methods: {
+    show () {
+      this.$modal.show(MyModal);
+    },
   }
 };
 </script>
